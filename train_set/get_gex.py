@@ -22,6 +22,7 @@ test_comb_data = gdsc_filtered.loc[:, selected_columns]
 
 # 输出新的数据集test_comb_data
 test_comb_data.to_csv('test_comb_data.csv', index=False)
+gdsc_filtered.to_csv('gdsc_filtered.csv', index=False)
 
 # 读取cell_line_gex.csv文件
 cell_line_gex = pd.read_csv('cell_line_gex.csv',header=None)
