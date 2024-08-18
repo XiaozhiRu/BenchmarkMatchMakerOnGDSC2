@@ -5,7 +5,7 @@ import seaborn as sns
 
 # 读取数据
 gdsc = pd.read_csv('test_comb_data.csv')
-gdsc['Bliss_matrix'] = gdsc['Bliss_matrix']*500
+gdsc['Bliss_matrix'] = gdsc['Bliss_matrix']*200
 # 绘制分布图
 mean_value = gdsc['Bliss_matrix'].mean()
 median_value = gdsc['Bliss_matrix'].median()

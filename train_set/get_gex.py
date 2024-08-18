@@ -1,11 +1,8 @@
 import pandas as pd
 
-# 读取gdsc数据和DrugCombData数据
-gdsc = pd.read_csv('gdsc.csv',index_col=0)
+gdsc = pd.read_csv('gdsc.csv', index_col=0)
 drug_comb_data = pd.read_csv('DrugCombinationData.tsv',sep='\t')
 
-# 在gdsc数据中找到CELL_LINE_NAME与DrugCombData数据中Cell_line_name匹配的行
-# 获取DrugCombData中这些行的索引值，并添加到gdsc数据中
 gdsc['DrugCombData_Index'] = gdsc['CELL_LINE_NAME'].apply(
     lambda x: drug_comb_data[drug_comb_data['cell_line_name'] == x].index[0] if any(drug_comb_data['cell_line_name'] == x) else None
 )
